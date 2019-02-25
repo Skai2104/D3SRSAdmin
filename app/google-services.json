@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "358585421388",
+    "firebase_url": "https://d3srs-4db35.firebaseio.com",
+    "project_id": "d3srs-4db35",
+    "storage_bucket": "d3srs-4db35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358585421388:android:69fb2fdc3039672e",
+        "android_client_info": {
+          "package_name": "com.skai2104.d3srs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358585421388-2mbpsukk1vkqnr67p3ulot85hq8aiuug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.skai2104.d3srs",
+            "certificate_hash": "aa8fe629f16df6d1f18fe27eeb60734bb3f5c9c1"
+          }
+        },
+        {
+          "client_id": "358585421388-fc2l3b7dlr3usbrr88jgs309gvj901tj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.skai2104.d3srs",
+            "certificate_hash": "2a2a0cb9d8a31b3ddf13de52868e124f544ca783"
+          }
+        },
+        {
+          "client_id": "358585421388-g3u169sg6n6t8d3f2m10ate28p8af5ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHNVXskBQJ7BFYNY-LZORgC5vNajxN4AM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358585421388-g3u169sg6n6t8d3f2m10ate28p8af5ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358585421388:android:c35c2b74b116df2f",
+        "android_client_info": {
+          "package_name": "com.skai2104.d3srsadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358585421388-nug78n64spk2q2gm81c4qvej8p3fffam.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.skai2104.d3srsadmin",
+            "certificate_hash": "aa8fe629f16df6d1f18fe27eeb60734bb3f5c9c1"
+          }
+        },
+        {
+          "client_id": "358585421388-g3u169sg6n6t8d3f2m10ate28p8af5ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHNVXskBQJ7BFYNY-LZORgC5vNajxN4AM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358585421388-g3u169sg6n6t8d3f2m10ate28p8af5ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
