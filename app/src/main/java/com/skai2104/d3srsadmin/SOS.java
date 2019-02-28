@@ -1,6 +1,8 @@
 package com.skai2104.d3srsadmin;
 
-public class SOS {
+import java.io.Serializable;
+
+public class SOS implements Serializable {
     private String datetime, mFrom, mFromId, mLatitude, mLongitude, mAddress, mDocId;
 
     public SOS() {
