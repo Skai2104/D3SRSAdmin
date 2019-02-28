@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                                         Map<String, Object> updateInfoMap = new HashMap<>();
                                         updateInfoMap.put("token_id", mTokenId);
 
-                                        mFirestore.collection("Authorities").document(currentId).set(updateInfoMap)
+                                        mFirestore.collection("Authorities").document(currentId).update(updateInfoMap)
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void aVoid) {
