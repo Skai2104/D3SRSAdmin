@@ -148,7 +148,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap map) {
         LatLng location;
-        float zoomLevel = 11.5f;
+        float zoomLevel = 14.0f;
 
         mMap = map;
 
@@ -204,6 +204,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                 @Override
                 public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                     if (queryDocumentSnapshots != null) {
+                        mSosList.clear();
+
                         for (DocumentChange doc : queryDocumentSnapshots.getDocumentChanges()) {
                             String docId = doc.getDocument().getId();
 
