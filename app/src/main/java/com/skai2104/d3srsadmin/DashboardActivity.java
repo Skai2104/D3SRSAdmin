@@ -108,18 +108,6 @@ public class DashboardActivity extends AppCompatActivity {
                 mDrawerLayout.closeDrawers();
             }
         });
-
-        mFirestore.collection("Authorities").document(mUserId).get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        mUserName = documentSnapshot.getString("name");
-                        mUserEmail = documentSnapshot.getString("email");
-
-                        mNameTV.setText(mUserName);
-                        mEmailTV.setText(mUserEmail);
-                    }
-                });
     }
 
     @Override
@@ -190,5 +178,22 @@ public class DashboardActivity extends AppCompatActivity {
         setTitle(menuItem.getTitle());
         // Close the navigation drawer
         mDrawerLayout.closeDrawers();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mFirestore.collection("Authorities").document(mUserId).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        mUserName = documentSnapshot.getString("name");
+                        mUserEmail = documentSnapshot.getString("email");
+
+                        mNameTV.setText(mUserName);
+                        mEmailTV.setText(mUserEmail);
+                    }
+                });
     }
 }
