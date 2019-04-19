@@ -1,6 +1,7 @@
 package com.skai2104.d3srsadmin;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
@@ -258,7 +259,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                             @Override
                             public void onClick(View view) {
                                 mListTV.setBackgroundResource(R.drawable.left_btn_border_filled);
+                                mListTV.setTextColor(Color.WHITE);
                                 mMapTV.setBackgroundResource(R.drawable.right_btn_border);
+                                mMapTV.setTextColor(getResources().getColor(R.color.colorPrimary));
 
                                 if (mHasData) {
                                     mSosListRV.setVisibility(View.VISIBLE);
@@ -276,7 +279,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                             @Override
                             public void onClick(View view) {
                                 mListTV.setBackgroundResource(R.drawable.left_btn_border);
+                                mListTV.setTextColor(getResources().getColor(R.color.colorPrimary));
                                 mMapTV.setBackgroundResource(R.drawable.right_btn_border_filled);
+                                mMapTV.setTextColor(Color.WHITE);
 
                                 if (mHasData) {
                                     mSosListRV.setVisibility(View.GONE);

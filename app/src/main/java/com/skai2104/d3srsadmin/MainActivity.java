@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -25,9 +26,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    private Toolbar mToolbar;
     private EditText mEmailET, mPasswordET;
-    private ProgressBar mProgressBar;
+    private LinearLayout mProgressBarLayout;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
@@ -41,12 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         mEmailET = findViewById(R.id.emailET);
         mPasswordET = findViewById(R.id.passwordET);
-        mProgressBar = findViewById(R.id.progressBar);
-        mProgressBar.setVisibility(View.GONE);
-
-        mToolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("D3SRS Admin");
+        mProgressBarLayout = findViewById(R.id.progressBarLayout);
+        mProgressBarLayout.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
         mFirestore = FirebaseFirestore.getInstance();
@@ -65,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         String password = mPasswordET.getText().toString().trim();
 
         if (!hasValidationError(email, password)) {
-            mProgressBar.setVisibility(View.VISIBLE);
+            mProgressBarLayout.setVisibility(View.VISIBLE);
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -93,11 +89,11 @@ public class MainActivity extends AppCompatActivity {
                                 });
                             } else {
                                 if (task.getException() instanceof FirebaseAuthInvalidUserException) {
-                                    mProgressBar.setVisibility(View.INVISIBLE);
+                                    mProgressBarLayout.setVisibility(View.GONE);
                                     Toast.makeText(MainActivity.this, "Invalid user", Toast.LENGTH_SHORT).show();
 
                                 } else {
-                                    mProgressBar.setVisibility(View.INVISIBLE);
+                                    mProgressBarLayout.setVisibility(View.GONE);
                                     Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }

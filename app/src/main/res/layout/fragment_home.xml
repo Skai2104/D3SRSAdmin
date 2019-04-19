@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ce4257"
     tools:context=".HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -24,19 +27,23 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:padding="10dp"
                 android:gravity="center"
                 android:text="List"
                 android:textSize="20sp"
-                android:background="@drawable/left_btn_border"/>
+                android:textColor="@android:color/white"
+                android:background="@drawable/left_btn_border_filled"/>
 
             <TextView
                 android:id="@+id/mapTV"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:padding="10dp"
                 android:gravity="center"
                 android:text="Map"
                 android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
                 android:background="@drawable/right_btn_border"/>
         </LinearLayout>
 
@@ -44,7 +51,7 @@
             android:id="@+id/sosListRV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+            android:visibility="visible">
 
 
         </android.support.v7.widget.RecyclerView>
@@ -52,14 +59,16 @@
         <RelativeLayout
             android:id="@+id/mapViewLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/card_background"
+            android:visibility="gone">
 
             <com.google.android.gms.maps.MapView
                 android:id="@+id/mapView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"/>
+                android:layout_height="match_parent" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -67,8 +76,12 @@
         android:id="@+id/noSosTV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:gravity="center"
         android:text="There are currently no SOS emergency request."
+        android:textColor="@color/colorPrimary"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:visibility="visible"/>
 
 </RelativeLayout>
