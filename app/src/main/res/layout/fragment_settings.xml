@@ -20,7 +20,9 @@
             android:layout_marginTop="120dp"
             android:padding="30dp"
             android:text="My Account"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_corner_button"/>
 
         <Button
             android:id="@+id/registrationBtn"
@@ -30,6 +32,8 @@
             android:padding="30dp"
             android:text="User Registration"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_corner_button"
             android:visibility="gone"/>
     </LinearLayout>
 

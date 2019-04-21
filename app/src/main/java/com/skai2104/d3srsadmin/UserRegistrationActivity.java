@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ import java.util.Map;
 
 public class UserRegistrationActivity extends AppCompatActivity {
     private EditText mNameET, mEmailET, mPasswordET, mPhoneET;
-    private ProgressBar mProgressBar;
+    private LinearLayout mProgressBarLayout;
 
     private String mName, mEmail, mPhone;
 
@@ -43,9 +44,9 @@ public class UserRegistrationActivity extends AppCompatActivity {
         mEmailET = findViewById(R.id.emailET);
         mPasswordET = findViewById(R.id.passwordET);
         mPhoneET = findViewById(R.id.phoneET);
-        mProgressBar = findViewById(R.id.progressBar);
+        mProgressBarLayout = findViewById(R.id.progressBarLayout);
 
-        mProgressBar.setVisibility(View.INVISIBLE);
+        mProgressBarLayout.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
         mFirestore = FirebaseFirestore.getInstance();
@@ -81,7 +82,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         mPhone = mPhoneET.getText().toString().trim();
 
         if (!hasValidationError(mName, mEmail, password, mPhone)) {
-            mProgressBar.setVisibility(View.VISIBLE);
+            mProgressBarLayout.setVisibility(View.VISIBLE);
             mAuth.createUserWithEmailAndPassword(mEmail, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

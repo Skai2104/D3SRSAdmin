@@ -11,7 +11,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MissingPersonListRecyclerAdapter extends RecyclerView.Adapter<MissingPersonListRecyclerAdapter.ViewHolder> {
     private List<MissingPerson> mMissingPersonList;
@@ -56,8 +61,23 @@ public class MissingPersonListRecyclerAdapter extends RecyclerView.Adapter<Missi
         final String status = mMissingPersonList.get(position).getStatus();
         final String reportPerson = mMissingPersonList.get(position).getReported();
         final String docId = mMissingPersonList.get(position).getDocId();
+        final String image = mMissingPersonList.get(position).getImage();
 
         viewHolder.mNameTV.setText(name);
+
+        if (image != null) {
+            if (!image.isEmpty()) {
+                Glide.with(mContext)
+                        .load(image)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .skipMemoryCache(true)
+                        .into(viewHolder.mPhotoIV);
+            } else {
+                viewHolder.mPhotoIV.setImageResource(R.drawable.person_icon);
+            }
+        } else {
+            viewHolder.mPhotoIV.setImageResource(R.drawable.person_icon);
+        }
 
         if (reportPerson.equals(mCurrentUserId)) {
             viewHolder.mReportedTV.setVisibility(View.VISIBLE);
@@ -91,6 +111,7 @@ public class MissingPersonListRecyclerAdapter extends RecyclerView.Adapter<Missi
                 i.putExtra("status", status);
                 i.putExtra("reportPerson", reportPerson);
                 i.putExtra("docId", docId);
+                i.putExtra("image", image);
                 mContext.startActivity(i);
             }
         });
@@ -104,7 +125,7 @@ public class MissingPersonListRecyclerAdapter extends RecyclerView.Adapter<Missi
     public class ViewHolder extends RecyclerView.ViewHolder {
         private View mView;
         private TextView mNameTV, mReportedTV;
-        private ImageView mPhotoIV;
+        private CircleImageView mPhotoIV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
