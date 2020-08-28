@@ -8,6 +8,7 @@ Disaster Safety Status Self-Reporting System (Admin) (D3SRS (Admin)) is an Andro
 ### Tools & Platforms
 - Android Studio (Java)
 - Firebase (Authentication, Cloud Firestore, Storage, Messaging Service - for push notification)
+- Google Maps API (Direction, location markers
 
 ### Feature Highlights
 
