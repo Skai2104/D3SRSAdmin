@@ -1,2 +1,2 @@
 # D3SRS (Admin)
-Disaster Safety Status Self-Reporting System (D3SRS) is an Android mobile application to let the users to send a SOS request to the authorities and update their safety status when they got involved in a disaster/incident. This app also provides many more useful features for the family members and friends to keep track of the status of the victims.
+Disaster Safety Status Self-Reporting System (Admin) (D3SRS (Admin)) is an Android mobile application to work with the D3SRS app to monitor the SOS alerts and missing person report sent by the app. It is for admin/authority use only.
