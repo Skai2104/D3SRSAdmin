@@ -15,3 +15,7 @@ Disaster Safety Status Self-Reporting System (Admin) (D3SRS (Admin)) is an Andro
 1. The user can view the SOS requests sent by the victims in list or map view.
 
 <img src="https://github.com/Skai2104/D3SRS/blob/master/Screenshots/sos_list_admin.png" width="150"> <img src="https://github.com/Skai2104/D3SRS/blob/master/Screenshots/sos_map_admin.png" width="150">
+
+2. The user can view the missing person details and update the status.
+
+<img src="https://github.com/Skai2104/D3SRS/blob/master/Screenshots/missing_person_details_admin.png" width="150">
